@@ -10,7 +10,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@Document(collation = "Projeto")
+@Document(collection = "Projeto")
 @Data
 public class Projeto {
     @Id

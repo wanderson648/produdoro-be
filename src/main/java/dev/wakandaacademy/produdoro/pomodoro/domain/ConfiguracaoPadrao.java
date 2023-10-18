@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Data
-@Document(collation = "ConfiguracaoPadraoPomodoro")
+@Document(collection = "ConfiguracaoPadraoPomodoro")
 public class ConfiguracaoPadrao {
     private static final String CODIGO_DEFAULT = "DEFAULT";
 
