@@ -1,5 +1,7 @@
 package dev.wakandaacademy.produdoro.usuario.domain;
 
+import dev.wakandaacademy.produdoro.pomodoro.domain.ConfiguracaoPadrao;
+import dev.wakandaacademy.produdoro.usuario.application.api.UsuarioNovoRequest;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,4 +29,10 @@ public class Usuario {
     private StatusUsuario statusUsuario = StatusUsuario.FOCO;
     @Builder.Default
     private Integer quantidadePomodorosPausaCurta = 0;
+
+    public Usuario(UsuarioNovoRequest usuarioRequest, ConfiguracaoPadrao configuracaoPadrao) {
+        this.email = usuarioRequest.getEmail();
+        this.statusUsuario = StatusUsuario.FOCO;
+        this.configuracaoUsuario = new ConfiguracaoUsuario(configuracaoPadrao);
+    }
 }
